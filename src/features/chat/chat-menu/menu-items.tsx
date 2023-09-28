@@ -18,13 +18,12 @@ export const MenuItems: FC<Prop> = (props) => {
 
   const sendData = async (threadID: string) => {
     await SoftDeleteChatThreadByID(threadID);
-    router.refresh();
-    router.replace("/chat");
+    props.refresh();
   };
 
   const renameTitle = async (threadID: string, title: string) => {
     await userUpdateThreadTitle(threadID, title);
-    props.refresh()
+    props.refresh();
   };
 
   return (
