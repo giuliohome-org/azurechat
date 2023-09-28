@@ -19,6 +19,7 @@ export const MenuItems: FC<Prop> = (props) => {
   const sendData = async (threadID: string) => {
     await SoftDeleteChatThreadByID(threadID);
     props.refresh();
+    window.location.replace("/chat");
   };
 
   const renameTitle = async (threadID: string, title: string) => {

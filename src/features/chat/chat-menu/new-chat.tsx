@@ -7,7 +7,7 @@ import { FC } from "react";
 import { CreateChatThread } from "../chat-services/chat-thread-service";
 
 interface Prop {
-  refresh: () => void
+  refresh?: () => void
 }
 
 export const NewChat: FC<Prop> = (props) => {
@@ -16,8 +16,8 @@ export const NewChat: FC<Prop> = (props) => {
     try {
       const newChatThread = await CreateChatThread();
       if (newChatThread) {
+        if (props.refresh) props.refresh();
         router.push("/chat/" + newChatThread.id);
-        props.refresh();
       }
     } catch (e) {
       console.log(e);

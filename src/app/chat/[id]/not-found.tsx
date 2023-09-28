@@ -1,9 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { NewChat } from "@/features/chat/chat-menu/new-chat";
-import { useMemo  } from "react";
 
 export default async function NotFound() {
-  const dummy = useMemo(() => {}, []);
+  const dummy = () => {};
   return (
     <Card className="h-full items-center flex flex-col gap-4 justify-center">
       <div className="flex w-full items-center container mx-auto max-w-xl justify-center h-full gap-2">
@@ -12,7 +11,7 @@ export default async function NotFound() {
           <p className="text-sm text-muted-foreground">
             How about we start a new chat?
           </p>
-          <NewChat  refresh={dummy} />
+          <NewChat/>
         </div>
       </div>
     </Card>
