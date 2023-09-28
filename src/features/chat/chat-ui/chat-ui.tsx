@@ -24,7 +24,6 @@ import {
 import { transformCosmosToAIModel } from "../chat-services/utils";
 import { EmptyState } from "./chat-empty-state";
 import { ChatHeader } from "./chat-header";
-import { AppContext } from "@/app/chat/layout";
 
 interface Prop {
   chats: Array<ChatMessageModel>;
@@ -165,7 +164,6 @@ export const ChatUI: FC<Prop> = (props) => {
       </div>
     </div>
   );
-  //const {refresh, setRefresh} =  useContext(AppContext);
   
   return (
     <div className="h-full relative overflow-hidden flex-1 bg-card rounded-md shadow-md">
