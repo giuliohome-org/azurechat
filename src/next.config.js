@@ -5,6 +5,16 @@ const nextConfig = {
     serverActions: true,
     serverActionsBodySizeLimit: "22mb",
   },
+  images: {
+    remotePatterns: [
+        {
+           protocol: 'https',
+            hostname: '**',
+             port: '',
+             pathname: '**',
+         },
+     ],
+  },
 };
 
 module.exports = nextConfig;
