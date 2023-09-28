@@ -36,7 +36,7 @@ export const ChatMenu = () => {
   return (
     <Menu className=" p-2">
       <MenuHeader className="justify-end">
-        <NewChat />
+        <NewChat refresh={doRefresh} />
       </MenuHeader>
       <MenuContent>
         <MenuItems refresh={doRefresh} menuItems={items} />

@@ -5,14 +5,19 @@ import { PlusCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { CreateChatThread } from "../chat-services/chat-thread-service";
 
-export const NewChat = () => {
+interface Prop {
+  menuItems: Array<ChatThreadModel>;
+  refresh: () => void
+}
+
+export const NewChat: FC<Prop> = (props) => {
   const router = useRouter();
   const startNewChat = async () => {
     try {
       const newChatThread = await CreateChatThread();
       if (newChatThread) {
         router.push("/chat/" + newChatThread.id);
-        router.refresh();
+        props.refresh();
       }
     } catch (e) {
       console.log(e);
