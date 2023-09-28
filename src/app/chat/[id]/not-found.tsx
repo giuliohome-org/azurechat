@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { NewChat } from "@/features/chat/chat-menu/new-chat";
+import { useMemo  } from "react";
 
 export default async function NotFound() {
-  const dummy = () => {};
+  const dummy = useMemo(() => {}, []);
   return (
     <Card className="h-full items-center flex flex-col gap-4 justify-center">
       <div className="flex w-full items-center container mx-auto max-w-xl justify-center h-full gap-2">
