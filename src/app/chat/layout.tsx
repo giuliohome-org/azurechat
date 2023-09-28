@@ -1,16 +1,11 @@
+'use client'
+
 import { ChatMenu } from "@/features/chat/chat-menu/chat-menu";
 import { ChatMenuContainer } from "@/features/chat/chat-menu/chat-menu-container";
 import { MainMenu } from "@/features/menu/menu";
-import { AI_NAME } from "@/features/theme/customise";
+// import { AI_NAME } from "@/features/theme/customise";
 
-export const dynamic = "force-dynamic";
-
-export const metadata = {
-  title: AI_NAME,
-  description: AI_NAME,
-};
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -20,7 +15,7 @@ export default async function RootLayout({
       <MainMenu />
       <div className="flex-1 flex rounded-md overflow-hidden bg-card/70">
         <ChatMenuContainer>
-          <ChatMenu />
+          <ChatMenu/>
         </ChatMenuContainer>
         {children}
       </div>

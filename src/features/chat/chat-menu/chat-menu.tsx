@@ -24,13 +24,13 @@ export const ChatMenu = () => {
     fetchData();
     if (items.length > 0) {
       router.refresh();
-      router.replace(`/chat/${items[0].id}`);
+      router.replace(`/chat`);
     }
   }, [refresh]);
 
   const doRefresh = () => {
     console.log("should refresh")
-    setRefresh(!refresh);
+    setRefresh(!refresh)
   }
 
   return (
