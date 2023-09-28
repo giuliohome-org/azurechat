@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { CreateChatThread } from "../chat-services/chat-thread-service";
 
 interface Prop {
-  menuItems: Array<ChatThreadModel>;
   refresh: () => void
 }
 
