@@ -26,7 +26,7 @@ export const ChatMenu = () => {
       router.refresh();
       router.replace(`/chat`);
     }
-  }, [refresh]);
+  }, [items.length, refresh, router]);
 
   const doRefresh = () => {
     console.log("should refresh")

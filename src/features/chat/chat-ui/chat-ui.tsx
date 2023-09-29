@@ -9,7 +9,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { AI_NAME } from "@/features/theme/customise";
 import { useChat } from "ai/react";
 import { useSession } from "next-auth/react";
-import { FC, FormEvent, useRef, useState, useContext } from "react";
+import { FC, FormEvent, useRef, useState } from "react";
 import {
   IndexDocuments,
   UploadDocument,
@@ -24,7 +24,6 @@ import {
 import { transformCosmosToAIModel } from "../chat-services/utils";
 import { EmptyState } from "./chat-empty-state";
 import { ChatHeader } from "./chat-header";
-import { AppContext } from "@/app/chat/layout";
 
 interface Prop {
   chats: Array<ChatMessageModel>;
@@ -165,8 +164,6 @@ export const ChatUI: FC<Prop> = (props) => {
       </div>
     </div>
   );
-  //const {refresh, setRefresh} =  useContext(AppContext);
-  
   return (
     <div className="h-full relative overflow-hidden flex-1 bg-card rounded-md shadow-md">
       {messages.length !== 0 ? (
